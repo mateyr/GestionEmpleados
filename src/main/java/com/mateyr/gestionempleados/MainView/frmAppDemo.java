@@ -31,6 +31,7 @@ public class frmAppDemo extends javax.swing.JFrame {
         
         pnlTree = new PnlTree();
         pnlTreeController = new PnlTreeController(pnlTree);
+        
         initComponents();
         pnlEmpleadoTable.add(pnlTable);
         pnlTreeArea.add(pnlTree);
