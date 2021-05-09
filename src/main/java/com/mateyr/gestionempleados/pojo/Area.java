@@ -18,10 +18,17 @@ public class Area {
     private String code;
     private List<Empleado> empleados;
 
+    
+    
     public Area(String areaName, String code, List<Empleado> empleados) {
         this.areaName = areaName;
         this.code = code;
         this.empleados = empleados;
+    }
+
+    public Area(String areaName, String code) {
+         this.areaName = areaName;
+         this.code = code;
     }
     
     public String getAreaName() {

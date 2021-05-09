@@ -6,6 +6,9 @@
 
 package com.mateyr.gestionempleados.Panel;
 
+import javax.swing.JButton;
+import javax.swing.JTree;
+
 /**
  *
  * @author MateyR
@@ -17,6 +20,25 @@ public class PnlTree extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JButton getBtnAddArea() {
+        return btnAddArea;
+    }
+
+    public JButton getBtnDelete() {
+        return btnDelete;
+    }
+    
+    
+    
+
+    public JTree getTreeArea() {
+        return treeArea;
+    }
+    
+    
+    
+    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -26,21 +48,43 @@ public class PnlTree extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlButton = new javax.swing.JPanel();
+        btnAddArea = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        PnlTree = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         treeArea = new javax.swing.JTree();
 
         setLayout(new java.awt.BorderLayout());
 
+        pnlButton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        btnAddArea.setText("Add Area");
+        pnlButton.add(btnAddArea);
+
+        btnDelete.setText("Delete");
+        pnlButton.add(btnDelete);
+
+        add(pnlButton, java.awt.BorderLayout.PAGE_START);
+
+        PnlTree.setLayout(new java.awt.BorderLayout());
+
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         treeArea.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(treeArea);
 
-        add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        PnlTree.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        add(PnlTree, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PnlTree;
+    private javax.swing.JButton btnAddArea;
+    private javax.swing.JButton btnDelete;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel pnlButton;
     private javax.swing.JTree treeArea;
     // End of variables declaration//GEN-END:variables
 

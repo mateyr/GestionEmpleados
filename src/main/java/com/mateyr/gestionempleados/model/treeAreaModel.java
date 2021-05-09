@@ -11,4 +11,5 @@ package com.mateyr.gestionempleados.model;
  */
 public class treeAreaModel {
     
+    
 }

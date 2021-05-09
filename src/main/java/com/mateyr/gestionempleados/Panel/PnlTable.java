@@ -39,7 +39,7 @@ public class PnlTable extends javax.swing.JPanel {
 
         pnlTable.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        btnAdd.setText("Add");
+        btnAdd.setText("Add Employe");
         pnlTable.add(btnAdd);
 
         btnEdit.setText("Edit");
