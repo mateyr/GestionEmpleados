@@ -6,6 +6,8 @@
 package com.mateyr.gestionempleados.controllers;
 
 import com.mateyr.gestionempleados.Panel.PnlTable;
+import com.mateyr.gestionempleados.Panel.dlgAddEmploye;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -13,10 +15,21 @@ import com.mateyr.gestionempleados.Panel.PnlTable;
  */
 public class PnlTableController {
     private PnlTable pnlTable;
-
+    private dlgAddEmploye dlgAddEmploye;
+    private dlgAddEmployeController addEmployeController;
+    
+    
     public PnlTableController(PnlTable pnlTable) {
         this.pnlTable = pnlTable;
+        InitComponet();
     }
     
+    private void InitComponet(){
+       
+       
+       
+       
+    }
     
+   
 }

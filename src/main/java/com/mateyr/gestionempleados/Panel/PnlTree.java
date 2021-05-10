@@ -28,9 +28,7 @@ public class PnlTree extends javax.swing.JPanel {
         return btnDelete;
     }
     
-    
-    
-
+  
     public JTree getTreeArea() {
         return treeArea;
     }

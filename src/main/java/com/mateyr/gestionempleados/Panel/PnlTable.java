@@ -5,6 +5,9 @@
  */
 package com.mateyr.gestionempleados.Panel;
 
+import javax.swing.JButton;
+import javax.swing.JTable;
+
 /**
  *
  * @author MateyR
@@ -18,6 +21,21 @@ public class PnlTable extends javax.swing.JPanel {
         initComponents();
     }
 
+   
+
+    public JTable getTblEmpleado() {
+        return tblEmpleado;
+    }
+
+    public void setTblEmpleado(JTable tblEmpleado) {
+        this.tblEmpleado = tblEmpleado;
+    }
+    
+    
+    
+    
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,29 +46,13 @@ public class PnlTable extends javax.swing.JPanel {
     private void initComponents() {
 
         pnlTable = new javax.swing.JPanel();
-        btnAdd = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-        pnlButton = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         tblEmpleado = new javax.swing.JTable();
 
         setLayout(new java.awt.BorderLayout());
 
-        pnlTable.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
-
-        btnAdd.setText("Add Employe");
-        pnlTable.add(btnAdd);
-
-        btnEdit.setText("Edit");
-        pnlTable.add(btnEdit);
-
-        btnDelete.setText("Delete");
-        pnlTable.add(btnDelete);
-
+        pnlTable.setLayout(new java.awt.BorderLayout());
         add(pnlTable, java.awt.BorderLayout.PAGE_END);
-
-        pnlButton.setLayout(new java.awt.BorderLayout());
 
         tblEmpleado.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,20 +65,14 @@ public class PnlTable extends javax.swing.JPanel {
 
             }
         ));
-        jScrollPane2.setViewportView(tblEmpleado);
+        jScrollPane1.setViewportView(tblEmpleado);
 
-        pnlButton.add(jScrollPane2, java.awt.BorderLayout.CENTER);
-
-        add(pnlButton, java.awt.BorderLayout.CENTER);
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnEdit;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JPanel pnlButton;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlTable;
     private javax.swing.JTable tblEmpleado;
     // End of variables declaration//GEN-END:variables

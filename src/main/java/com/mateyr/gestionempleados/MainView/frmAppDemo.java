@@ -9,6 +9,9 @@ import com.mateyr.gestionempleados.Panel.PnlTable;
 import com.mateyr.gestionempleados.Panel.PnlTree;
 import com.mateyr.gestionempleados.controllers.PnlTableController;
 import com.mateyr.gestionempleados.controllers.PnlTreeController;
+import com.mateyr.gestionempleados.controllers.frmAppDemoController;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,29 +19,45 @@ import com.mateyr.gestionempleados.controllers.PnlTreeController;
  */
 public class frmAppDemo extends javax.swing.JFrame {
 
-    private PnlTable pnlTable;
-    private PnlTableController pnlTableController;
+         
+    private frmAppDemoController appDemoController;
+
+   
     
-    private PnlTree pnlTree;
-    private PnlTreeController pnlTreeController;
+    
+    
     
     /**
      * Creates new form frmAppDemo
      */
     public frmAppDemo() {
-        pnlTable = new PnlTable();
-        pnlTableController = new PnlTableController(pnlTable);
-        
-        pnlTree = new PnlTree();
-        pnlTreeController = new PnlTreeController(pnlTree);
-        
         initComponents();
-        pnlEmpleadoTable.add(pnlTable);
-        pnlTreeArea.add(pnlTree);
-       
+        appDemoController = new frmAppDemoController(this);    
+    }
+
+    public JPanel getPnlEmpleadoTable() {
+        return pnlEmpleadoTable;
+    }
+
+    public JPanel getPnlTreeArea() {
+        return pnlTreeArea;
+    }
+
+    public JButton getBtnAdd() {
+        return btnAdd;
+    }
+
+    public JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    public JButton getBtnEdit() {
+        return btnEdit;
     }
     
     
+    
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,19 +68,33 @@ public class frmAppDemo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jSplitPane1 = new javax.swing.JSplitPane();
-        pnlEmpleadoTable = new javax.swing.JPanel();
+        btnBotton = new javax.swing.JPanel();
+        btnAdd = new javax.swing.JButton();
+        btnEdit = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
         pnlTreeArea = new javax.swing.JPanel();
+        pnlEmpleadoTable = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        pnlEmpleadoTable.setLayout(new java.awt.BorderLayout());
-        jSplitPane1.setRightComponent(pnlEmpleadoTable);
+        btnBotton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+
+        btnAdd.setText("Add");
+        btnBotton.add(btnAdd);
+
+        btnEdit.setText("Edit");
+        btnBotton.add(btnEdit);
+
+        btnDelete.setText("Delete");
+        btnBotton.add(btnDelete);
+
+        getContentPane().add(btnBotton, java.awt.BorderLayout.PAGE_END);
 
         pnlTreeArea.setLayout(new java.awt.BorderLayout());
-        jSplitPane1.setLeftComponent(pnlTreeArea);
+        getContentPane().add(pnlTreeArea, java.awt.BorderLayout.LINE_START);
 
-        getContentPane().add(jSplitPane1, java.awt.BorderLayout.CENTER);
+        pnlEmpleadoTable.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(pnlEmpleadoTable, java.awt.BorderLayout.CENTER);
 
         setSize(new java.awt.Dimension(785, 437));
         setLocationRelativeTo(null);
@@ -103,7 +136,10 @@ public class frmAppDemo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSplitPane jSplitPane1;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JPanel btnBotton;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JPanel pnlEmpleadoTable;
     private javax.swing.JPanel pnlTreeArea;
     // End of variables declaration//GEN-END:variables

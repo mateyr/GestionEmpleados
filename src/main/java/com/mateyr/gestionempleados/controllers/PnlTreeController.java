@@ -5,10 +5,17 @@
  */
 package com.mateyr.gestionempleados.controllers;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.mateyr.gestionempleados.Panel.PnlTree;
 import com.mateyr.gestionempleados.Panel.dlgArea;
 import com.mateyr.gestionempleados.pojo.Area;
+import com.mateyr.gestionempleados.pojo.Empleado;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -23,6 +30,14 @@ public class PnlTreeController {
     private List<Area> areas;
     private DefaultTreeModel treeModel;
     private DefaultMutableTreeNode root;
+    private Gson gson;
+    private List<Empleado> empleados;
+    private List<String> areaNames;
+    
+    public List<Area> getAreas() {
+        return areas;
+    }
+     
     
     private dlgArea dlgArea;
     private dlgAreaController dlgAreaController;
@@ -33,13 +48,11 @@ public class PnlTreeController {
     }
     
     public void InitComponet(){
-       
-        areas = new ArrayList<>();    
-                
-        root = new DefaultMutableTreeNode("Areas",true);
-        treeModel = new DefaultTreeModel(root);
-        
-        pnlTree.getTreeArea().setModel(treeModel);
+        areaNames = new ArrayList<>();
+        areas = new ArrayList();
+        gson = new Gson();
+          
+        SetTreeModelFromJson();
         
         pnlTree.getBtnAddArea().addActionListener((ActionEvent evt) -> {
             btnAddAreaActionPerformed(evt);
@@ -64,5 +77,38 @@ public class PnlTreeController {
        areas.add(area);
             
     }
-
+    
+    private void SetTreeModelFromJson(){
+        JsonReader jreader = new JsonReader(new BufferedReader(
+                            new InputStreamReader(getClass().getResourceAsStream("/Json/EmpleadosData.json"))));
+        
+        Type listType = new TypeToken<ArrayList<Empleado>>(){}.getType();
+        
+        empleados = gson.fromJson(jreader, listType);         
+        
+        root = new DefaultMutableTreeNode("Areas",true);
+        treeModel = new DefaultTreeModel(root);
+        
+        empleados.stream().forEach((t) -> {
+          String areaNameTemp = t.getArea();
+          if(areaNames.contains(areaNameTemp)){
+              return;
+          }else{
+              areaNames.add(areaNameTemp);
+          }
+        });
+        
+        areaNames.stream().forEach(((t) -> {
+            Area area = new Area(t);
+            areas.add(area);
+        }));
+        
+        areas.stream().forEach((t) -> {
+            treeModel.insertNodeInto(new DefaultMutableTreeNode(t.getAreaName()), root, root.getChildCount());
+        });
+        
+        pnlTree.getTreeArea().setModel(treeModel);
+    }
+        
 }
+

@@ -16,15 +16,25 @@ public class Empleado {
     private String cargo;
     private Integer edad;
     private String cellphone; 
-
-    public Empleado(String name, String lastName, String cargo, Integer edad, String cellphone) {
+    private String area;
+    
+    public Empleado(String name, String lastName, String cargo, Integer edad, String cellphone,String area) {
         this.name = name;
         this.lastName = lastName;
         this.cargo = cargo;
         this.edad = edad;
         this.cellphone = cellphone;
+        this.area = area;
     }
 
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+    
     public String getName() {
         return name;
     }
