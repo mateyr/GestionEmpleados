@@ -77,6 +77,7 @@ public class frmAppDemo extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnBotton.setBackground(new java.awt.Color(0, 255, 204));
         btnBotton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         btnAdd.setBackground(new java.awt.Color(153, 0, 204));
