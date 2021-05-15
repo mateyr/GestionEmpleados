@@ -67,6 +67,7 @@ public class PnlTree extends javax.swing.JPanel {
 
         PnlTree.setLayout(new java.awt.BorderLayout());
 
+        treeArea.setBackground(new java.awt.Color(0, 0, 255));
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         treeArea.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane1.setViewportView(treeArea);
