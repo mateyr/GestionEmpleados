@@ -79,6 +79,7 @@ public class frmAppDemo extends javax.swing.JFrame {
 
         btnBotton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
+        btnAdd.setBackground(new java.awt.Color(153, 0, 204));
         btnAdd.setText("Add");
         btnBotton.add(btnAdd);
 
