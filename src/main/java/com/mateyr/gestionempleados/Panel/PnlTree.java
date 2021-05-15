@@ -55,6 +55,7 @@ public class PnlTree extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        pnlButton.setBackground(new java.awt.Color(153, 0, 0));
         pnlButton.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         btnAddArea.setText("Add Area");
