@@ -95,6 +95,7 @@ public class frmAppDemo extends javax.swing.JFrame {
         pnlTreeArea.setLayout(new java.awt.BorderLayout());
         getContentPane().add(pnlTreeArea, java.awt.BorderLayout.LINE_START);
 
+        pnlEmpleadoTable.setBackground(new java.awt.Color(51, 0, 204));
         pnlEmpleadoTable.setForeground(new java.awt.Color(255, 0, 0));
         pnlEmpleadoTable.setLayout(new java.awt.BorderLayout());
         getContentPane().add(pnlEmpleadoTable, java.awt.BorderLayout.CENTER);
